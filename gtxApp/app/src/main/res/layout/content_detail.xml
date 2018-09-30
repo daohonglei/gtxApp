@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gtx.app.DetailActivity"
+    android:id="@+id/detail">
+
+    <ImageButton
+        android:id="@+id/bank"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:onClick="bank"
+        android:textSize="16dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/bank"/>
+    <TextView
+        android:layout_toRightOf="@+id/bank"
+        android:layout_toLeftOf="@+id/bbb"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:textColor="#ffffff"
+        android:background="@color/colorPrimary"/>
+    <TextView
+        android:id="@+id/bbb"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentRight="true"/>
+
+
+
+    <ListView
+        android:id="@+id/detail_list"
+        android:layout_below="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:layout_marginBottom="50dp">
+    </ListView>
+
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:onClick="changeStatus"
+        android:text=""
+        android:textSize="16dp"/>
+
+</RelativeLayout>

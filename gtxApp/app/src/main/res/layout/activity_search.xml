@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="项目名称/实施人员 \n客户名称/系统工单号/#任务号/地址"
+        android:textSize="16dp"/>
+
+    <RelativeLayout
+        android:id="@+id/begin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_below="@id/searchEditText">
+        <EditText
+            android:id="@+id/beginTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:onClick="getBeginTime"
+            android:hint="开始日期"
+            android:layout_toLeftOf="@id/clearBeginTime"
+            android:textSize="16dp">
+        </EditText>
+        <ImageButton
+            android:id="@+id/clearBeginTime"
+            android:layout_width="34dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="3dp"
+            android:onClick="clearBeginTime"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/clear"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_below="@id/begin">
+        <EditText
+            android:id="@+id/endTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:onClick="getEndTime"
+            android:hint="结束日期"
+            android:layout_toLeftOf="@id/clearEndTime"
+            android:textSize="16dp">
+        </EditText>
+        <ImageButton
+            android:id="@+id/clearEndTime"
+            android:layout_width="34dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="3dp"
+            android:onClick="clearEndTime"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/clear"/>
+    </RelativeLayout>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:entries="@array/status_arr"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/end"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="search"
+        android:text="查询"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        android:textSize="16dp"/>
+</RelativeLayout>

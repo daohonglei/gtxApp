@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.gtx.app.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableLayout
+            android:id="@+id/table_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+        <ScrollView
+            android:layout_below="@id/table_header"
+            android:layout_width="fill_parent"
+            android:layout_height="2000dp">
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_horizontal"
+                android:id="@+id/fillable_area2">
+                <TableLayout
+                    android:id="@+id/fixed_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <HorizontalScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TableLayout
+                        android:id="@+id/scrollable_part"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"/>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary">
+            <Button
+                android:id="@+id/prevbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上一页"
+                android:layout_alignParentLeft="true"
+                android:onClick="prev"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorWhite"/>
+            <TextView
+                android:id="@+id/pageNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"/>
+            <Button
+                android:id="@+id/nextbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下一页"
+                android:layout_alignParentRight="true"
+                android:onClick="next"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorWhite"/>
+        </RelativeLayout>
+
+        <com.nightonke.boommenu.BoomMenuButton
+            android:id="@+id/bmb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="65dp"
+            android:layout_marginRight="20dp"
+            app:bmb_normalColor="@color/colorPrimary"/>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
